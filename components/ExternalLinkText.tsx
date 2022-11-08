@@ -18,7 +18,7 @@ export function ExternalLinkText({ text, url }: Props): JSX.Element {
         }
 
         a:hover {
-          font-size: 17px;
+          letter-spacing: 1px;
         }
 
         a::after {

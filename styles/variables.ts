@@ -17,7 +17,7 @@ export const THEMES = {
     header: colors.blueish,
     footer: colors.blueish,
     imageBorder: colors.yellowish,
-    imageButton: colors.purplish,
+    imageButton: colors.yellowish,
   },
   light: {
     text: colors.darkGray,
@@ -26,7 +26,7 @@ export const THEMES = {
     header: colors.darkGray,
     footer: colors.darkGray,
     imageBorder: colors.yellowish,
-    imageButton: colors.purplish,
+    imageButton: colors.yellowish,
   },
   common: {
     primary: "",

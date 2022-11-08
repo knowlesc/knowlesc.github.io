@@ -8,7 +8,6 @@ type Props = {
 
 export function Carousel({ images, reverse }: Props): JSX.Element {
   const [index, setIndex] = useState(0);
-  console.log(index);
 
   const prev = useCallback(() => {
     if (images.length <= 1) return;
@@ -43,26 +42,6 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           position: relative;
         }
 
-        .image-container::after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: ${reverse ? "-20px" : "20px"};
-          left: ${reverse ? "-20px" : "20px"};
-          bottom: ${reverse ? "20px" : "-20px"};
-          right: ${reverse ? "20px" : "-20px"};
-          background-color: ${THEMES.light.imageBorder};
-          z-index: -1;
-          transition: all 0.2s;
-        }
-
-        .carousel:hover .image-container::after {
-          top: -20px;
-          left: -20px;
-          bottom: -20px;
-          right: -20px;
-        }
-
         @media (prefers-color-scheme: dark) {
           .image-container::after {
             background-color: ${THEMES.dark.imageBorder};
@@ -79,11 +58,15 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           border-radius: 20px;
           border: none;
           cursor: pointer;
-          background-color: ${THEMES.common.accent};
+          background-color: ${THEMES.light.imageButton};
         }
 
         button path {
-          fill: ${THEMES.light.textAlt};
+          fill: ${THEMES.light.text};
+        }
+
+        button svg {
+          vertical-align: middle;
         }
 
         .left-arrow {
@@ -92,6 +75,26 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
 
         .right-arrow {
           right: 10px;
+        }
+
+        .circles {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          right: 0;
+          text-align: center;
+        }
+
+        .circle {
+          position: relative;
+          width: 12px;
+          height: 12px;
+          margin: 5px;
+          border: 1px solid ${THEMES.light.text};
+        }
+
+        .circle.active {
+          background-color: ${THEMES.common.accent};
         }
       `}</style>
       {images.length > 1 && (
@@ -106,14 +109,18 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
               <path d="M9.96967 7.46967C10.2626 7.17678 10.7374 7.17678 11.0303 7.46967L15.0303 11.4697C15.3232 11.7626 15.3232 12.2374 15.0303 12.5303L11.0303 16.5303C10.7374 16.8232 10.2626 16.8232 9.96967 16.5303C9.67678 16.2374 9.67678 15.7626 9.96967 15.4697L13.4393 12L9.96967 8.53033C9.67678 8.23744 9.67678 7.76256 9.96967 7.46967Z" />
             </svg>
           </button>
+          <div className="circles">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                className={`circle ${index === i && "active"}`}
+                onClick={() => setIndex(i)}
+              />
+            ))}
+          </div>
         </>
       )}
-      <div>
-        {/* ^ This div is needed for the background overlay to display properly */}
-        <div className="image-container">
-          <img src={images[index]} alt={"Project image"} />
-        </div>
-      </div>
+      <img src={images[index]} alt={"Project image"} />
     </div>
   );
 }

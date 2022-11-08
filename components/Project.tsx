@@ -52,6 +52,8 @@ export function Project({
           .project-image {
             flex: 0 0 60%;
             height: 600px;
+            position: relative;
+            background: ${THEMES.light.imageBorder};
           }
 
           @media (max-width: 800px) {
