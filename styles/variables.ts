@@ -16,7 +16,6 @@ export const THEMES = {
     bg: colors.darkGray,
     header: colors.blueish,
     footer: colors.blueish,
-    divider: colors.purplish,
     imageBorder: colors.yellowish,
   },
   light: {
@@ -25,7 +24,6 @@ export const THEMES = {
     bg: colors.lightGray,
     header: colors.darkGray,
     footer: colors.darkGray,
-    divider: colors.darkGray,
     imageBorder: colors.yellowish,
   },
   common: {

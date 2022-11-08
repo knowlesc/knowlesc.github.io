@@ -1,5 +1,3 @@
-import { THEMES } from "../styles/variables";
-import { Divider } from "./Divider";
 import { Emphasize } from "./Emphasize";
 import { Project } from "./Project";
 
@@ -11,7 +9,7 @@ export function Projects(): JSX.Element {
         description={
           <Emphasize
             text={
-              "Generates randomized Scattergories lists using {{React}}, {{Sass}}, and {{TypeScript}}"
+              "A configurable Scattergories list generator and timer built using {{React}}, {{Webpack}}, {{Sass}}, and {{TypeScript}}."
             }
           />
         }
@@ -20,8 +18,6 @@ export function Projects(): JSX.Element {
         linkText="Read More"
         linkUrl="https://github.com/knowlesc/scattergories-generator"
       />
-      <Divider />
-
       <Project
         title="PUBG Match Tracker"
         description={
