@@ -32,11 +32,11 @@ export function Divider(): JSX.Element {
   }, [updateTransparency]);
 
   return (
-    <div ref={ref} className="squiggle">
+    <div ref={ref}>
       <style jsx>{`
         div {
           width: ${progress}%;
-          height: 10px;
+          height: 4px;
           margin: 0 auto;
           transition: all 0.1s;
           background-color: ${THEMES.light.divider};

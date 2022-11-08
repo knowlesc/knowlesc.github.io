@@ -7,12 +7,18 @@ export function Projects(): JSX.Element {
   return (
     <section className="projects">
       <Project
-        title="Project 1"
-        description="PRoject 1 description"
+        title="Scattergories Generator"
+        description={
+          <Emphasize
+            text={
+              "Generates randomized Scattergories lists using {{React}}, {{Sass}}, and {{TypeScript}}"
+            }
+          />
+        }
         imageAlt="Project image"
-        imageSrc="https://i.imgur.com/MbnBx1j.png"
+        imageSrc="https://i.imgur.com/nBMIJOK.png"
         linkText="Read More"
-        linkUrl="https://github.com/knowlesc/pubg-discord-bot"
+        linkUrl="https://github.com/knowlesc/scattergories-generator"
       />
       <Divider />
 
