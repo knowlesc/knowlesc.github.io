@@ -1,5 +1,5 @@
 import { HEIGHTS } from "../styles/variables";
-import { Heading } from "./Heading";
+import { Projects } from "./Projects";
 
 export function MainSection(): JSX.Element {
   return (
@@ -13,8 +13,7 @@ export function MainSection(): JSX.Element {
           }
         `}
       </style>
-      <Heading>Welcome</Heading>
-      <p>{`I haven't added anything here yet, but I will soon!`}</p>
+      <Projects />
     </main>
   );
 }

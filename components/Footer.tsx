@@ -1,4 +1,4 @@
-import { COLORS, HEIGHTS } from "../styles/variables";
+import { THEMES, HEIGHTS } from "../styles/variables";
 
 export function Footer(): JSX.Element {
   return (
@@ -7,13 +7,54 @@ export function Footer(): JSX.Element {
         {`
           footer {
             min-height: ${HEIGHTS.FOOTER};
-            background: ${COLORS.DARK};
-            color: ${COLORS.LIGHT};
+            background: ${THEMES.light.footer};
+            color: ${THEMES.light.textAlt};
             padding: 50px 10%;
+            text-align: center;
+          }
+
+          img {
+            width: 48px;
+            margin: 0 5px;
+          }
+
+          .dark {
+            display: none;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            footer {
+              background: ${THEMES.dark.footer};
+              color: ${THEMES.dark.textAlt};
+            }
+
+            .light {
+              display: none;
+            }
+
+            .dark {
+              display: initial;
+            }
           }
         `}
       </style>
-      Footer
+
+      <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+        <img
+          src="linkedin-light.png"
+          alt="My LinkedIn profile"
+          className="light"
+        />
+        <img
+          src="linkedin-dark.png"
+          alt="My LinkedIn profile"
+          className="dark"
+        />
+      </a>
+      <a href="https://github.com" target="_blank" rel="noreferrer">
+        <img src="github-light.png" alt="My GitHub profile" className="light" />
+        <img src="github-dark.png" alt="My GitHub profile" className="dark" />
+      </a>
     </footer>
   );
 }
