@@ -1,4 +1,3 @@
-import { THEMES } from "../styles/variables";
 import { ExternalLinkText } from "./ExternalLinkText";
 import { Heading } from "./Heading";
 
@@ -31,7 +30,11 @@ export function Project({
             justify-content: center;
             gap: 50px;
             flex-direction: ${reverse ? "row-reverse" : ""};
-            margin-bottom: 200px;
+            margin-bottom: 150px;
+          }
+
+          .project:not(:first-child) {
+            margin-top: 150px;
           }
 
           .project-image {
@@ -46,6 +49,7 @@ export function Project({
           .project-description {
             min-width: 200px;
             flex-basis: 40%;
+            line-height: 30px;
           }
 
           .project-link {

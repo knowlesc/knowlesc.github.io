@@ -1,4 +1,5 @@
 import { THEMES } from "../styles/variables";
+import { Emphasize } from "./Emphasize";
 
 export function Splash(): JSX.Element {
   return (
@@ -53,7 +54,7 @@ export function Splash(): JSX.Element {
 
       <div className="splash-image">
         <div className="splash-text">
-          {"Hello! I'm a full stack developer."}
+          <Emphasize text="Hello! I'm a {{full stack developer}}." />
         </div>
       </div>
 

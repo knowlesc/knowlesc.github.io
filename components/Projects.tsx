@@ -1,4 +1,5 @@
 import { THEMES } from "../styles/variables";
+import { Divider } from "./Divider";
 import { Emphasize } from "./Emphasize";
 import { Project } from "./Project";
 
@@ -13,6 +14,8 @@ export function Projects(): JSX.Element {
         linkText="Read More"
         linkUrl="https://github.com/knowlesc/pubg-discord-bot"
       />
+      <Divider />
+
       <Project
         title="PUBG Match Tracker"
         description={

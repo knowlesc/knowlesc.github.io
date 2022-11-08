@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { THEMES, HEIGHTS } from "../styles/variables";
+import { Emphasize } from "./Emphasize";
 
 export function Navigation(): JSX.Element {
   return (
@@ -30,7 +31,9 @@ export function Navigation(): JSX.Element {
           }
         }
       `}</style>
-      <h1>Colin Knowles</h1>
+      <h1>
+        <Emphasize text="{{Colin Knowles}}" />
+      </h1>
       {false && (
         <nav>
           <Link href="/">Item 1</Link>
