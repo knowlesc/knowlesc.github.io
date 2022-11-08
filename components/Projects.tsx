@@ -10,7 +10,7 @@ export function Projects(): JSX.Element {
         title="Project 1"
         description="PRoject 1 description"
         imageAlt="Project image"
-        imageSrc="placeholder.webp"
+        imageSrc="https://i.imgur.com/MbnBx1j.png"
         linkText="Read More"
         linkUrl="https://github.com/knowlesc/pubg-discord-bot"
       />
@@ -28,7 +28,7 @@ export function Projects(): JSX.Element {
           />
         }
         imageAlt="Project image"
-        imageSrc="placeholder.webp"
+        imageSrc="https://i.imgur.com/MbnBx1j.png"
         linkText="Read More"
         linkUrl="https://github.com/knowlesc/pubg-discord-bot"
         reverse={true}

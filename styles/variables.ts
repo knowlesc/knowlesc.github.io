@@ -1,21 +1,37 @@
+const colors = {
+  lightGray: "#D9DFE0",
+  darkGray: "#1F1C19",
+  reddish: "#BB2F2F",
+  reddishTransparent: "rgba(187, 47, 47, 0.8)",
+  blueish: "#6C9AD2",
+  purplish: "#BB6CAA",
+  yellowish: "#F1D28D",
+  greenish: "#10976F",
+};
+
 export const THEMES = {
   dark: {
-    text: "#D9DFE0",
-    textAlt: "#1F1C19",
-    bg: "#1F1C19",
-    header: "#D9DFE0",
-    footer: "#D9DFE0",
+    text: colors.lightGray,
+    textAlt: colors.darkGray,
+    bg: colors.darkGray,
+    header: colors.blueish,
+    footer: colors.blueish,
+    divider: colors.purplish,
+    imageBorder: colors.yellowish,
   },
   light: {
-    text: "#1F1C19",
-    textAlt: "#D9DFE0",
-    bg: "#D9DFE0",
-    header: "#1F1C19",
-    footer: "#1F1C19",
+    text: colors.darkGray,
+    textAlt: colors.lightGray,
+    bg: colors.lightGray,
+    header: colors.darkGray,
+    footer: colors.darkGray,
+    divider: colors.darkGray,
+    imageBorder: colors.yellowish,
   },
   common: {
-    accent: "#BB2F2F",
-    accentMuted: "rgba(187, 47, 47, 0.8)",
+    primary: "",
+    accent: colors.purplish,
+    accentMuted: colors.reddishTransparent,
   },
 };
 

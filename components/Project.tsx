@@ -1,3 +1,4 @@
+import { THEMES } from "../styles/variables";
 import { ExternalLinkText } from "./ExternalLinkText";
 import { Heading } from "./Heading";
 
@@ -28,6 +29,7 @@ export function Project({
             display: flex;
             flex-flow: row nowrap;
             justify-content: center;
+            align-items: center;
             gap: 50px;
             flex-direction: ${reverse ? "row-reverse" : ""};
             margin-bottom: 150px;
@@ -44,6 +46,38 @@ export function Project({
           img {
             max-width: 100%;
             min-width: 200px;
+            display: block;
+          }
+
+          .image-container {
+            display: inline-block;
+            position: relative;
+          }
+
+          .image-container::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: ${reverse ? "-20px" : "20px"};
+            left: ${reverse ? "-20px" : "20px"};
+            bottom: ${reverse ? "20px" : "-20px"};
+            right: ${reverse ? "20px" : "-20px"};
+            background-color: ${THEMES.light.imageBorder};
+            z-index: -1;
+            transition: all 0.2s;
+          }
+
+          .project-image:hover .image-container::after {
+            top: -20px;
+            left: -20px;
+            bottom: -20px;
+            right: -20px;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            .image-container::after {
+              background-color: ${THEMES.dark.imageBorder};
+            }
           }
 
           .project-description {
@@ -65,7 +99,9 @@ export function Project({
         `}
       </style>
       <div className="project-image">
-        <img src={imageSrc} alt={imageAlt} />
+        <div className="image-container">
+          <img src={imageSrc} alt={imageAlt} />
+        </div>
       </div>
       <div className="project-description">
         <Heading>{title}</Heading>
