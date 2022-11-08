@@ -14,6 +14,7 @@ export function Navigation(): JSX.Element {
           align-items: center;
           position: sticky;
           top: 0px;
+          z-index: 1000;
         }
 
         .nav-right {

@@ -39,7 +39,11 @@ export function Footer(): JSX.Element {
         `}
       </style>
 
-      <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+      <a
+        href="https://www.linkedin.com/in/knowlesc/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <img
           src="linkedin-light.png"
           alt="My LinkedIn profile"
@@ -51,7 +55,7 @@ export function Footer(): JSX.Element {
           className="dark"
         />
       </a>
-      <a href="https://github.com" target="_blank" rel="noreferrer">
+      <a href="https://github.com/knowlesc" target="_blank" rel="noreferrer">
         <img src="github-light.png" alt="My GitHub profile" className="light" />
         <img src="github-dark.png" alt="My GitHub profile" className="dark" />
       </a>

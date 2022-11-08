@@ -1,3 +1,5 @@
+import { THEMES } from "../styles/variables";
+
 export function Heading({
   children,
 }: React.PropsWithChildren<{}>): JSX.Element {
@@ -6,7 +8,6 @@ export function Heading({
       <style jsx global>
         {`
           .heading-text {
-            border-bottom: 5px solid #bb2f2f;
           }
         `}
       </style>

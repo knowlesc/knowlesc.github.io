@@ -13,6 +13,10 @@ export const THEMES = {
     header: "#1F1C19",
     footer: "#1F1C19",
   },
+  common: {
+    accent: "#BB2F2F",
+    accentMuted: "rgba(187, 47, 47, 0.8)",
+  },
 };
 
 export const HEIGHTS = {

@@ -1,4 +1,5 @@
 import { THEMES } from "../styles/variables";
+import { ExternalLinkText } from "./ExternalLinkText";
 import { Heading } from "./Heading";
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
   description: string | JSX.Element;
   imageSrc: string;
   imageAlt: string;
+  linkUrl: string;
+  linkText: string;
 };
 
 export function Project({
@@ -15,6 +18,8 @@ export function Project({
   description,
   imageSrc,
   imageAlt,
+  linkUrl,
+  linkText,
 }: Props): JSX.Element {
   return (
     <div className="project">
@@ -26,7 +31,7 @@ export function Project({
             justify-content: center;
             gap: 50px;
             flex-direction: ${reverse ? "row-reverse" : ""};
-            margin-bottom: 100px;
+            margin-bottom: 200px;
           }
 
           .project-image {
@@ -40,6 +45,12 @@ export function Project({
 
           .project-description {
             min-width: 200px;
+            flex-basis: 40%;
+          }
+
+          .project-link {
+            margin-top: 50px;
+            text-align: center;
           }
 
           @media (max-width: 800px) {
@@ -55,6 +66,9 @@ export function Project({
       <div className="project-description">
         <Heading>{title}</Heading>
         {description}
+        <div className="project-link">
+          <ExternalLinkText text={linkText} url={linkUrl} />
+        </div>
       </div>
     </div>
   );
