@@ -1,4 +1,5 @@
 import { THEMES } from "../styles/variables";
+import { Carousel } from "./Carousel";
 import { ExternalLinkText } from "./ExternalLinkText";
 import { Heading } from "./Heading";
 
@@ -6,8 +7,7 @@ type Props = {
   reverse?: boolean;
   title: string | JSX.Element;
   description: string | JSX.Element;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrcs: string[];
   linkUrl: string;
   linkText: string;
 };
@@ -16,8 +16,7 @@ export function Project({
   reverse,
   title,
   description,
-  imageSrc,
-  imageAlt,
+  imageSrcs,
   linkUrl,
   linkText,
 }: Props): JSX.Element {
@@ -39,47 +38,6 @@ export function Project({
             margin-top: 150px;
           }
 
-          .project-image {
-            flex-basis: 60%;
-          }
-
-          img {
-            max-width: 100%;
-            min-width: 200px;
-            display: block;
-          }
-
-          .image-container {
-            display: inline-block;
-            position: relative;
-          }
-
-          .image-container::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: ${reverse ? "-20px" : "20px"};
-            left: ${reverse ? "-20px" : "20px"};
-            bottom: ${reverse ? "20px" : "-20px"};
-            right: ${reverse ? "20px" : "-20px"};
-            background-color: ${THEMES.light.imageBorder};
-            z-index: -1;
-            transition: all 0.2s;
-          }
-
-          .project-image:hover .image-container::after {
-            top: -20px;
-            left: -20px;
-            bottom: -20px;
-            right: -20px;
-          }
-
-          @media (prefers-color-scheme: dark) {
-            .image-container::after {
-              background-color: ${THEMES.dark.imageBorder};
-            }
-          }
-
           .project-description {
             min-width: 200px;
             flex-basis: 40%;
@@ -91,6 +49,11 @@ export function Project({
             text-align: center;
           }
 
+          .project-image {
+            flex: 0 0 60%;
+            height: 600px;
+          }
+
           @media (max-width: 800px) {
             .project {
               flex-flow: column nowrap;
@@ -99,9 +62,7 @@ export function Project({
         `}
       </style>
       <div className="project-image">
-        <div className="image-container">
-          <img src={imageSrc} alt={imageAlt} />
-        </div>
+        <Carousel images={imageSrcs} reverse={reverse} />
       </div>
       <div className="project-description">
         <Heading>{title}</Heading>

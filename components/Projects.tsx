@@ -13,9 +13,8 @@ export function Projects(): JSX.Element {
             }
           />
         }
-        imageAlt="Project image"
-        imageSrc="https://i.imgur.com/nBMIJOK.png"
-        linkText="Read More"
+        imageSrcs={["https://i.imgur.com/nBMIJOK.png"]}
+        linkText="View on GitHub"
         linkUrl="https://github.com/knowlesc/scattergories-generator"
       />
       <Project
@@ -29,9 +28,12 @@ export function Projects(): JSX.Element {
             }
           />
         }
-        imageAlt="Project image"
-        imageSrc="https://i.imgur.com/MbnBx1j.png"
-        linkText="Read More"
+        imageSrcs={[
+          "https://i.imgur.com/MbnBx1j.png",
+          "https://i.imgur.com/VBDrcP0.png",
+          "https://i.imgur.com/wipg1U3.png",
+        ]}
+        linkText="View on GitHub"
         linkUrl="https://github.com/knowlesc/pubg-discord-bot"
         reverse={true}
       />
