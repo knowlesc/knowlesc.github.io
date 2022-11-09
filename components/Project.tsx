@@ -66,6 +66,24 @@ export function Project({
               right: 0;
               opacity: 0.4;
               background-color: ${THEMES.common.accent};
+              z-index: -2;
+            }
+
+            .project-image::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              opacity: 1;
+              background: repeating-linear-gradient(
+                -45deg,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.2) 20px,
+                rgba(20, 20, 20, 0.2) 20px,
+                rgba(20, 20, 20, 0.2) 40px
+              );
               z-index: -1;
             }
 
@@ -78,7 +96,7 @@ export function Project({
               right: -30px;
               opacity: 0.4;
               background-color: ${THEMES.common.primary};
-              z-index: -1;
+              z-index: -2;
             }
 
             @media (max-width: 800px) {
