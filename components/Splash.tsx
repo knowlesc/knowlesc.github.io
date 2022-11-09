@@ -60,7 +60,11 @@ export function Splash(): JSX.Element {
           right: 0;
           background-image: url("/splash.webp");
           background-size: cover;
-          mask: #000000;
+          mask: radial-gradient(
+            circle at center,
+            rgba(0, 0, 0, 0.933) 10px,
+            rgba(0, 0, 0, 0) 500px
+          );
         }
 
         .splash-text {
