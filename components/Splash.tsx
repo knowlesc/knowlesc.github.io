@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { THEMES } from "../styles/variables";
 import { Emphasize } from "./Emphasize";
 import { FadeIntoView } from "./FadeIntoView";
@@ -10,6 +10,21 @@ export function Splash(): JSX.Element {
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
+  useEffect(() => {
+    const spotlightEl = document.querySelector<HTMLDivElement>("#splash-image");
+    document.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      if (spotlightEl) {
+        spotlightEl.style.mask = `
+          radial-gradient(
+            circle at ${clientX}px ${clientY}px,
+            rgba(0, 0, 0, 0.933) 10px,
+            rgba(0, 0, 0, 0) 350px
+          )`;
+      }
+    });
+  }, []);
+
   return (
     <div className="splash">
       <style jsx>{`
@@ -17,16 +32,26 @@ export function Splash(): JSX.Element {
           color: ${THEMES.light.textAlt};
         }
 
-        .splash-image {
+        .splash-image-container {
           width: 100vw;
           height: 100vh;
           max-width: 100%;
-          background-image: url("/splash.webp");
-          background-size: cover;
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 0 10%;
+        }
+
+        .splash-image {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-image: url("/splash.webp");
+          background-size: cover;
+          mask: #000000;
         }
 
         .splash-text {
@@ -60,9 +85,21 @@ export function Splash(): JSX.Element {
             transform: translateY(-12px);
           }
         }
+
+        @keyframes flicker {
+          0%,
+          100% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0.6;
+          }
+        }
       `}</style>
 
-      <div className="splash-image">
+      <div className="splash-image-container">
+        <div className="splash-image" id="splash-image"></div>
         <FadeIntoView>
           <div className="splash-text">
             <Emphasize text="Hello! I'm a {{full stack developer}}." />
