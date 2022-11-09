@@ -19,9 +19,9 @@ export function Splash(): JSX.Element {
       if (spotlightEl && scrollY < innerHeight) {
         const mask = `
           radial-gradient(
-            circle at ${clientX}px ${clientY}px,
-            rgba(0, 0, 0, 0.933) 10px,
-            rgba(0, 0, 0, 0) 350px
+            circle at ${clientX}px ${clientY + scrollY}px,
+            rgba(0, 0, 0, 0.933) 30px,
+            rgba(0, 0, 0, 0) 450px
           )`;
 
         spotlightEl.style.mask = mask;
