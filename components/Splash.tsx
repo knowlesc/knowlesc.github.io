@@ -1,7 +1,14 @@
+import { useCallback } from "react";
 import { THEMES } from "../styles/variables";
 import { Emphasize } from "./Emphasize";
 
 export function Splash(): JSX.Element {
+  const scrollToContent = useCallback(() => {
+    document
+      .querySelector("header")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
   return (
     <div className="splash">
       <style jsx>{`
@@ -27,6 +34,7 @@ export function Splash(): JSX.Element {
 
         .chevron {
           text-align: center;
+          cursor: pointer;
         }
 
         .chevron-icon {
@@ -59,7 +67,7 @@ export function Splash(): JSX.Element {
         </div>
       </div>
 
-      <div className="chevron">
+      <div className="chevron" onClick={() => scrollToContent()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="128"

@@ -8,8 +8,7 @@ type Props = {
   title: string | JSX.Element;
   description: string | JSX.Element;
   imageSrcs: string[];
-  linkUrl: string;
-  linkText: string;
+  links: Array<{ url: string; text: string }>;
 };
 
 export function Project({
@@ -17,8 +16,7 @@ export function Project({
   title,
   description,
   imageSrcs,
-  linkUrl,
-  linkText,
+  links,
 }: Props): JSX.Element {
   return (
     <div className="project">
@@ -44,16 +42,46 @@ export function Project({
             line-height: 30px;
           }
 
-          .project-link {
+          .project-links {
             margin-top: 50px;
             text-align: center;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 15px;
           }
 
           .project-image {
             flex: 0 0 60%;
             height: 600px;
             position: relative;
-            background: ${THEMES.light.imageBorder};
+            padding: 10px;
+          }
+
+          .project-image-background {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: repeating-linear-gradient(
+                45deg,
+                ${THEMES.light.imageBorder} 25%,
+                transparent 25%,
+                transparent 75%,
+                ${THEMES.light.imageBorder} 75%,
+                ${THEMES.light.imageBorder}
+              ),
+              repeating-linear-gradient(
+                45deg,
+                ${THEMES.light.imageBorder} 25%,
+                transparent 25%,
+                transparent 75%,
+                ${THEMES.light.imageBorder} 75%,
+                ${THEMES.light.imageBorder}
+              );
+            background-position: 0 0, 10px 10px;
+            background-size: calc(2 * 10px) calc(2 * 10px);
+            opacity: 0.3;
           }
 
           @media (max-width: 800px) {
@@ -64,13 +92,18 @@ export function Project({
         `}
       </style>
       <div className="project-image">
+        <div className="project-image-background" />
         <Carousel images={imageSrcs} reverse={reverse} />
       </div>
       <div className="project-description">
         <Heading>{title}</Heading>
         {description}
-        <div className="project-link">
-          <ExternalLinkText text={linkText} url={linkUrl} />
+        <div className="project-links">
+          {links.map(({ text, url }, i) => (
+            <span key={text}>
+              <ExternalLinkText text={text} url={url} />
+            </span>
+          ))}
         </div>
       </div>
     </div>
