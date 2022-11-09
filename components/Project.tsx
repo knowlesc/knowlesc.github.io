@@ -27,7 +27,7 @@ export function Project({
             flex-flow: row nowrap;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 75px;
             flex-direction: ${reverse ? "row-reverse" : ""};
             margin-bottom: 150px;
           }
@@ -38,7 +38,7 @@ export function Project({
 
           .project-description {
             min-width: 200px;
-            flex-basis: 40%;
+            flex-basis: 45%;
             line-height: 30px;
           }
 
@@ -51,7 +51,7 @@ export function Project({
           }
 
           .project-image {
-            flex: 0 0 60%;
+            flex: 0 0 55%;
             height: 600px;
             position: relative;
             padding: 10px;
@@ -59,29 +59,25 @@ export function Project({
 
           .project-image-background {
             position: absolute;
-            top: 0;
+            top: -30px;
             bottom: 0;
-            left: 0;
+            left: -30px;
             right: 0;
-            background-image: repeating-linear-gradient(
-                45deg,
-                ${THEMES.light.imageBorder} 25%,
-                transparent 25%,
-                transparent 75%,
-                ${THEMES.light.imageBorder} 75%,
-                ${THEMES.light.imageBorder}
-              ),
-              repeating-linear-gradient(
-                45deg,
-                ${THEMES.light.imageBorder} 25%,
-                transparent 25%,
-                transparent 75%,
-                ${THEMES.light.imageBorder} 75%,
-                ${THEMES.light.imageBorder}
-              );
-            background-position: 0 0, 10px 10px;
-            background-size: calc(2 * 10px) calc(2 * 10px);
-            opacity: 0.3;
+            opacity: 0.4;
+            background-color: ${THEMES.common.accent};
+            z-index: -1;
+          }
+
+          .project-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: -30px;
+            left: 0;
+            right: -30px;
+            opacity: 0.4;
+            background-color: ${THEMES.light.imageBorder};
+            z-index: -1;
           }
 
           @media (max-width: 800px) {

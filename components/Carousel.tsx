@@ -59,7 +59,6 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           border: none;
           cursor: pointer;
           background-color: ${THEMES.light.imageButton};
-          border: 1px solid ${THEMES.light.text};
         }
 
         button path {
@@ -91,6 +90,7 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           width: 12px;
           height: 12px;
           margin: 5px;
+          border: 1px solid ${THEMES.common.accent};
         }
 
         .circle.active {
