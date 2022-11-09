@@ -29,7 +29,7 @@ export function Splash(): JSX.Element {
     <div className="splash">
       <style jsx>{`
         .splash {
-          color: ${THEMES.light.textAlt};
+          color: ${THEMES.dark.text};
         }
 
         .splash-image-container {
@@ -41,6 +41,7 @@ export function Splash(): JSX.Element {
           align-items: center;
           justify-content: center;
           padding: 0 10%;
+          background-color: ${THEMES.dark.bg};
         }
 
         .splash-image {
