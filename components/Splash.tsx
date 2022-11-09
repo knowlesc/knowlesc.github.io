@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { THEMES } from "../styles/variables";
 import { Emphasize } from "./Emphasize";
+import { FadeIntoView } from "./FadeIntoView";
 
 export function Splash(): JSX.Element {
   const scrollToContent = useCallback(() => {
@@ -62,9 +63,11 @@ export function Splash(): JSX.Element {
       `}</style>
 
       <div className="splash-image">
-        <div className="splash-text">
-          <Emphasize text="Hello! I'm a {{full stack developer}}." />
-        </div>
+        <FadeIntoView>
+          <div className="splash-text">
+            <Emphasize text="Hello! I'm a {{full stack developer}}." />
+          </div>
+        </FadeIntoView>
       </div>
 
       <div className="chevron" onClick={() => scrollToContent()}>
