@@ -1,9 +1,11 @@
 import { Emphasize } from "./Emphasize";
+import { Heading } from "./Heading";
 import { Project } from "./Project";
 
 export function Projects(): JSX.Element {
   return (
     <section className="projects">
+      <Heading>Selected Projects</Heading>
       <Project
         title="Collaborative D&D Map Browser"
         description={

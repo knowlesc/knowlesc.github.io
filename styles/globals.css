@@ -16,9 +16,18 @@ a {
   box-sizing: border-box;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "Arvo", Georgia, serif;
   font-weight: 400;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+h2 {
   font-size: 28px;
 }
 

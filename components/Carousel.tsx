@@ -90,7 +90,7 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           width: 12px;
           height: 12px;
           margin: 5px;
-          border: 1px solid ${THEMES.common.accent};
+          border: 1px solid ${THEMES.light.text};
         }
 
         .circle.active {

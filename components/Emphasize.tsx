@@ -10,6 +10,7 @@ export function Emphasize({ text }: Props): JSX.Element {
       <style jsx global>
         {`
           .attention {
+            background-size: 100px;
             background: ${THEMES.common.accentMuted};
             color: ${THEMES.light.textAlt};
           }

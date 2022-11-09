@@ -31,9 +31,9 @@ export function Navigation(): JSX.Element {
           }
         }
       `}</style>
-      <h1>
+      <h2>
         <Emphasize text="{{Colin Knowles}}" />
-      </h1>
+      </h2>
       {false && (
         <nav>
           <Link href="/">Item 1</Link>

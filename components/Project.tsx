@@ -1,7 +1,6 @@
 import { THEMES } from "../styles/variables";
 import { Carousel } from "./Carousel";
 import { ExternalLinkText } from "./ExternalLinkText";
-import { Heading } from "./Heading";
 
 type Props = {
   reverse?: boolean;
@@ -92,7 +91,7 @@ export function Project({
         <Carousel images={imageSrcs} reverse={reverse} />
       </div>
       <div className="project-description">
-        <Heading>{title}</Heading>
+        <h2>{title}</h2>
         {description}
         <div className="project-links">
           {links.map(({ text, url }, i) => (
