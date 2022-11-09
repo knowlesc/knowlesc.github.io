@@ -12,17 +12,25 @@ export function Splash(): JSX.Element {
 
   useEffect(() => {
     const spotlightEl = document.querySelector<HTMLDivElement>("#splash-image");
-    document.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
-      if (spotlightEl) {
-        spotlightEl.style.mask = `
+      const { scrollY, innerHeight } = window;
+
+      if (spotlightEl && scrollY < innerHeight) {
+        const mask = `
           radial-gradient(
             circle at ${clientX}px ${clientY}px,
             rgba(0, 0, 0, 0.933) 10px,
             rgba(0, 0, 0, 0) 350px
           )`;
+
+        spotlightEl.style.mask = mask;
+        spotlightEl.style.webkitMask = mask; // Required for Chrome even though it says it's deprecated
       }
-    });
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => document.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
@@ -57,6 +65,7 @@ export function Splash(): JSX.Element {
 
         .splash-text {
           font-size: 36px;
+          text-align: center;
         }
 
         .chevron {
