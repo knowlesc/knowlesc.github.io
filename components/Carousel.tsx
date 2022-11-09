@@ -42,12 +42,6 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           position: relative;
         }
 
-        @media (prefers-color-scheme: dark) {
-          .image-container::after {
-            background-color: ${THEMES.dark.imageBorder};
-          }
-        }
-
         button {
           position: absolute;
           color: white;
@@ -58,7 +52,7 @@ export function Carousel({ images, reverse }: Props): JSX.Element {
           border-radius: 20px;
           border: none;
           cursor: pointer;
-          background-color: ${THEMES.light.imageButton};
+          background-color: ${THEMES.common.primary};
         }
 
         button path {

@@ -77,7 +77,7 @@ export function Project({
               left: 0;
               right: -30px;
               opacity: 0.4;
-              background-color: ${THEMES.light.imageBorder};
+              background-color: ${THEMES.common.primary};
               z-index: -1;
             }
 
