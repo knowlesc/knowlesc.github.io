@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           content="Colin Knowles - Full Stack Developer"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="favicon.ico" />
+        <meta property="og:image" content="card.png" />
         <meta property="og:url" content="https://knowlesc.github.io/" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
