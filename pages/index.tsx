@@ -10,7 +10,17 @@ const Home: NextPage = () => {
     <div className="app">
       <Head>
         <title>Colin Knowles</title>
-        <meta name="description" content="Welcome to my personal site" />
+        <meta
+          name="description"
+          content="Colin Knowles - Full Stack Developer"
+        />
+        <meta
+          property="og:title"
+          content="Colin Knowles - Full Stack Developer"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="favicon.ico" />
+        <meta property="og:url" content="https://knowlesc.github.io/" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
