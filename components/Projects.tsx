@@ -18,7 +18,11 @@ export function Projects(): JSX.Element {
             }
           />
         }
-        imageSrcs={["projects/dnd-1.png", "projects/dnd-2.png"]}
+        imageSrcs={[
+          "projects/dnd-1.png",
+          "projects/dnd-2.png",
+          "projects/dnd-3.png",
+        ]}
         links={[
           {
             text: "View on GitHub",
